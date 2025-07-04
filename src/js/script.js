@@ -1,3 +1,5 @@
+//Скрипт работы гамбургера
+
 window.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.nav-menu'),
     menuItem = document.querySelectorAll('.nav-menu__list-item'),
@@ -14,15 +16,44 @@ window.addEventListener('DOMContentLoaded', () => {
             menu.classList.toggle('nav-menu_active');
         })
     })
+
+    
 })
 
-$(document).ready(function(){
-  $("a[href*='#']").on("click", function(e){
-    var anchor = $(this);
-    $('html, body').stop().animate({
-      scrollTop: $(anchor.attr('href')).offset().top
-    }, 777);
-    e.preventDefault();
-    return false;
+//Скрипт закрытия гамбургера при нажатии на ссылку
+
+const burger = document.querySelector(".hamburger");
+const menu = document.querySelector(".main-section__nav");
+const menuLinks = document.querySelectorAll(".nav-menu__link");
+
+burger.addEventListener("click", () => {
+  menu.classList.toggle("active");
+  burger.classList.toggle("active");
+});
+
+menuLinks.forEach((link) =>
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+    burger.classList.remove("active");
+  })
+);
+
+
+//Скрипт прокрутки страницы к началу 
+
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 200) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });

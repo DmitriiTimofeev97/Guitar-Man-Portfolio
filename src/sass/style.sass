@@ -4,6 +4,8 @@
 *
     box-sizing: border-box
 
+//Шрифты
+
 @font-face 
     font-family: "MontserratT"
     src: url(../fonts/Montserrat-Regular.ttf)
@@ -18,6 +20,8 @@
     font-style: normal
     font-display: swap
 
+//Основные цвета
+
 $color-blue: #5290EA
 $color-orange: #F28B64
 $color-grey: #E2E2E2
@@ -25,11 +29,14 @@ $color-grey: #E2E2E2
 html
     font-family: "MontserratT"
     font-weight: regular
+    scroll-behavior: smooth
 
 .container
     position: relative
     max-width: 1140px
     margin: 0 auto
+
+//Первая секция сайта
 .main-section
     position: relative
     min-height: 793px
@@ -57,6 +64,9 @@ html
         position: absolute
         right: -120px
         top: 650px
+
+//Навигационное меню
+
 .nav-menu
     &__list
         display: flex
@@ -77,6 +87,9 @@ html
             color: black
             &:hover, &:active
                 color: $color-orange
+
+//Портрет гитариста с фигурами
+
 .left-wrapper
     position: relative
     display: flex
@@ -120,6 +133,9 @@ html
         border-radius: 100px
         transform: rotate(-36.15deg)
         z-index: 1
+
+//Заголовок, текст, иконки - позиционирование
+
 .right-wrapper
     position: absolute
     width: 372px
@@ -133,6 +149,8 @@ html
         margin-bottom: 20px
     &__title
         margin-bottom: 5px
+
+//Иконки соц. сетей
 
 .icons
     display: inline-flex
@@ -156,6 +174,9 @@ html
             font-size: 21px
         a
             color: black
+
+//Заголовок + подчеркивания
+
 .title
     font-size: 72px
     line-height: 89.9%
@@ -182,6 +203,16 @@ html
         bottom: 60px
         border: none
         border-top: 1px solid black
+
+//Модификаторы для подчеркиваний
+
+.title__hr_top
+    bottom: 60px
+.title__hr_top-2
+    bottom: 60px
+
+//Кнопки 'Забронировать урок' и 'Есть вопросы?'
+
 .buttons
     display: inline-flex
     &__main-btn
@@ -215,8 +246,35 @@ html
             color: $color-orange
         img
             margin-right: 12px
+
+//Кнопки 'Забронировать урок' и 'Есть вопросы?' - для адаптива
+
 .buttons-adaptive
     display: none
+
+//Кнопка прокрутки к началу страницы
+
+.scroll-to-top
+    display: none
+    position: fixed
+    width: 55px
+    height: 55px
+    bottom: 20px
+    right: 20px
+    padding-bottom: 10px
+    font-size: 40px
+    background-color: #fff
+    color: #000
+    border: none
+    border-radius: 50%
+    cursor: pointer
+    transition: .3s all
+    z-index: 500
+    &:hover
+        transform: scale(1.2)
+
+//Декоративные круги + модификатор для второй секции
+
 .elipse
     width: 194px
     height: 194px
@@ -236,6 +294,12 @@ html
         &_big
             width: 189px
             height: 189px
+
+.elipse__subtract_white
+    background: white
+
+//Вторая секция сайта - позиционирование
+
 .second-section
     min-height: 700px
     overflow: hidden
@@ -273,8 +337,7 @@ html
     &__icons-box-adaptive
         display: none
 
-.elipse__subtract_white
-    background: white
+//Карточки с гитарами: общие стили + модификаторы цвета
 
 .cards-item
     position: relative
@@ -296,10 +359,15 @@ html
         transform: rotate(90deg)
         top: 140px
         right: -40px
+
 .cards-item_orange
     background: $color-orange
+
 .cards-item_blue
     background: $color-blue
+
+//Иконки достижений
+
 .icons-item
     display: inline-flex
     align-items: center
@@ -311,6 +379,9 @@ html
         span
             font-size: 48px
             font-weight: bold
+
+//Третья секция сайта - позиционирование
+
 .third-section
     position: relative
     min-height: 600px
@@ -345,6 +416,9 @@ html
         position: absolute
         right: -120px
         top: -120px
+
+//Футер
+
 .footer
     &__img
         position: absolute
@@ -357,11 +431,8 @@ html
         align-items: center
     &__title
         margin-bottom: 20px
-.title__hr_top
-    bottom: 60px
-.title__hr_top-2
-    bottom: 60px
 
+//Адаптив
 
 @media (max-width: 1199px)
     .container
